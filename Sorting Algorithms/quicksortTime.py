@@ -1,58 +1,65 @@
 import time
-
 # Quick sort function 
-def quickSort(a,start,end): 
+def quickSort(A,start,end): 
 
     # start is starting index 
     # end is last index 
+
     if start < end: 
+
         # p is pivot index
-        p = partition(a,start,end) 
+        p = partition(A,start,end) 
+
         #call quicksort recursively
-        quickSort(a, start, p-1) 
-        quickSort(a, p+1, end) 
+        quickSort(A, start, p-1) 
+        quickSort(A, p+1, end) 
 
 # Partion function
-def partition(a,start,end): 
+def partition(A,start,end): 
 
-    i = ( start-1 )    
-    #assign last index array item as pivot    
-    pivot = a[end]      
+        #assign last index array item as pivot    
+    pivot = A[end]      
+    i = ( start-1 ) 
+    
     for j in range(start , end): 
-        if   a[j] <= pivot: 
+        if   A[j] <= pivot: 
             i = i+1 
+
             #swap ith and jth items
-            a[i],a[j] = a[j],a[i] 
+            A[i],A[j] = A[j],A[i]
+
     #swap the pivot to its correct position
-    a[i+1],a[end] = a[end],a[i+1] 
+    A[i+1],A[end] = A[end],A[i+1] 
+
     return ( i+1 ) 
 
 # main function
 def main():
 
-    a = list()
     #input size of array from the user 
-    print("Choose a size of array : ") 
+    print("Choose A size of array : ") 
     n=input()
-    
-   
-    for i in range(0,int(n)):
-        #generating sorted ascending order array
-        a.append(i)
 
-     #CPU start time
+    print("enter array items: ")  
+    for i in range(0,int(n)):
+        A.append(int(i))
+
+    #CPU start time
     stime=time.clock()
-    quickSort(a,0,int(n)-1) 
+
+    quickSort(A,0,int(n)-1) 
+
     #CPU end time
     etime=time.clock()
+
     print ("QuickSort result is:") 
-    #for i in a: 
-     #   print (i,end=' ') 
+    print(A)
+    
     #Total time complexity
     Ttime=etime-stime
-    print()
     print("computation time = "+str(Ttime))
 
 #call main function
+A = list()
 if __name__ == "__main__":
   main()

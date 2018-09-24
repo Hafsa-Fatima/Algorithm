@@ -17,11 +17,10 @@ def quickSort(A,start,end):
 # Partion function
 def partition(A,start,end): 
 
-    i = ( start-1 )  
-
     #assign last index array item as pivot    
     pivot = A[end]      
-
+    i = ( start-1 )
+      
     for j in range(start , end): 
         if   A[j] <= pivot: 
             i = i+1 
