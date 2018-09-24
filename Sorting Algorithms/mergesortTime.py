@@ -41,15 +41,14 @@ def main():
     for size in range(1000,2001,500):
         A = [x for x in range(size)]
         #CPU start time
-        stime=time.clock()
+        stime=time.time()
 
         mergeSort(A) 
 
         #CPU end time
-        etime=time.clock()
-        
-        #Total time complexity
+        etime=time.time()
         Ttime=etime-stime
+
         print("Time taken for array size = "+str(len(A)))
         print("computation time = "+str(Ttime)+" seconds")
 
