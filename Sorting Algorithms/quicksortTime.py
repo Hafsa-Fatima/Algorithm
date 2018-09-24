@@ -1,6 +1,8 @@
 import time
 import sys
 sys.setrecursionlimit(10000) 
+ 
+
 # Quick sort function 
 def quickSort(A,start,end): 
 
@@ -25,12 +27,13 @@ def partition(A,start,end):
             i = i+1 
 
             #swap ith and jth items
-            A[i],A[j] = A[j],A[i]
+            A[i],A[j]=A[j],A[i]
 
     #swap the pivot to its correct position
-    A[i+1],A[end] = A[end],A[i+1] 
+    A[i+1],A[end]=A[end],A[i+1]
 
     return ( i+1 ) 
+
 
 # main function
 def main():

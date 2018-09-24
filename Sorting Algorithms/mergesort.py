@@ -59,7 +59,7 @@ def main():
     #Total time complexity
     Ttime=etime-stime
 
-    print("computation time = "+str(Ttime))
+    print("computation time = "+str(Ttime)+" seconds")
 
 #call main function
 A = list()
