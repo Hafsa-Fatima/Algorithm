@@ -1,4 +1,6 @@
 import time
+import sys
+sys.setrecursionlimit(10000)
 def mergeSort(A):
     if len(A)>1:
         q = len(A)//2
@@ -35,31 +37,21 @@ def merge(A,L,R):
         k=k+1
 
 def main():
+ 
+    for size in range(1000,2001,500):
+        A = [x for x in range(size)]
+        #CPU start time
+        stime=time.clock()
 
-    #input size of array from the user 
-    print("Choose a size of array : ") 
-    n=input()
+        mergeSort(A) 
 
-    print("enter array items: ")  
-    for i in range(0,int(n)):
-        j=input()
-        A.append(int(j))
-
-    #CPU start time
-    stime=time.clock()
-
-    mergeSort(A) 
-
-    #CPU end time
-    etime=time.clock()
-
-    print ("MergeSort result is:") 
-    print (A) 
-    
-    #Total time complexity
-    Ttime=etime-stime
-
-    print("computation time = "+str(Ttime))
+        #CPU end time
+        etime=time.clock()
+        
+        #Total time complexity
+        Ttime=etime-stime
+        print("Time taken for array size = "+str(len(A)))
+        print("computation time = "+str(Ttime)+" seconds")
 
 #call main function
 A = list()

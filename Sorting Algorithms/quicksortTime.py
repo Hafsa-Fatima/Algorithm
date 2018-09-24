@@ -1,9 +1,8 @@
 import time
+import sys
+sys.setrecursionlimit(10000) 
 # Quick sort function 
 def quickSort(A,start,end): 
-
-    # start is starting index 
-    # end is last index 
 
     if start < end: 
 
@@ -17,10 +16,10 @@ def quickSort(A,start,end):
 # Partion function
 def partition(A,start,end): 
 
-        #assign last index array item as pivot    
+    #assign last index array item as pivot    
     pivot = A[end]      
     i = ( start-1 ) 
-    
+
     for j in range(start , end): 
         if   A[j] <= pivot: 
             i = i+1 
@@ -35,31 +34,23 @@ def partition(A,start,end):
 
 # main function
 def main():
+    for i in range(1000,2001,500):
+        A = [x for x in range(i)]
 
-    #input size of array from the user 
-    print("Choose A size of array : ") 
-    n=input()
+        #CPU start time
+        stime=time.clock()
 
-    print("enter array items: ")  
-    for i in range(0,int(n)):
-        A.append(int(i))
+        quickSort(A,0,len(A)-1) 
 
-    #CPU start time
-    stime=time.clock()
+        #CPU end time
+        etime=time.clock()
 
-    quickSort(A,0,int(n)-1) 
-
-    #CPU end time
-    etime=time.clock()
-
-    print ("QuickSort result is:") 
-    print(A)
-    
-    #Total time complexity
-    Ttime=etime-stime
-    print("computation time = "+str(Ttime))
+        print("Time taken for array size = "+str(len(A)))
+        #Total time complexity
+        Ttime=etime-stime
+        print("computation time = "+str(Ttime)+" seconds")
 
 #call main function
-A = list()
+
 if __name__ == "__main__":
   main()

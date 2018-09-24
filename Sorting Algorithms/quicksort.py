@@ -2,9 +2,6 @@ import time
 # Quick sort function 
 def quickSort(A,start,end): 
 
-    # start is starting index 
-    # end is last index 
-
     if start < end: 
 
         # p is pivot index
@@ -20,7 +17,7 @@ def partition(A,start,end):
     #assign last index array item as pivot    
     pivot = A[end]      
     i = ( start-1 )
-      
+
     for j in range(start , end): 
         if   A[j] <= pivot: 
             i = i+1 
