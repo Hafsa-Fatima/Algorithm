@@ -8,6 +8,8 @@ def mergeSort(A):
         #recursively calling mergesort 
         mergeSort(L)
         mergeSort(R)
+
+        #merging the subarrays
         merge(A,L,R)
 
 def merge(A,L,R):
@@ -24,6 +26,7 @@ def merge(A,L,R):
             j=j+1
         k=k+1
 
+    #merging left and right subarrays
     while i < len(L):
         A[k]=L[i]
         i=i+1
@@ -56,10 +59,10 @@ def main():
     print ("MergeSort result is:") 
     print (A) 
     
-    #Total time complexity
-    Ttime=etime-stime
+    #Total time complexity in milliseconds
+    Ttime=(etime-stime)*1000
 
-    print("computation time = "+str(Ttime)+" seconds")
+    print("computation time = "+str(Ttime)+" milliseconds")
 
 #call main function
 A = list()

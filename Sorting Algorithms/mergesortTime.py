@@ -37,15 +37,15 @@ def merge(A,L,R):
         k=k+1
 
 def main():
- 
-    for size in range(1000,2001,500):
+    #size of array from 0 to 2000 in steps of 100
+    for size in range(0,2001,100):
         A = [x for x in range(size)]
-        #CPU start time
+        #CPU start time 
         stime=time.clock()
 
         mergeSort(A) 
 
-        #CPU end time
+        #CPU end time 
         etime=time.clock()
         Ttime=etime-stime
 

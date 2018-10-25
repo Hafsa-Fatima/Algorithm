@@ -42,20 +42,20 @@ def main():
         j=input()
         A.append(int(j))
 
-    #CPU start time
+    #CPU start time in seconds
     stime=time.clock()
 
     quickSort(A,0,int(n)-1) 
 
-    #CPU end time
+    #CPU end time in seconds
     etime=time.clock()
 
     print ("QuickSort result is:") 
     print(A)
     
-    #Total time complexity
-    Ttime=etime-stime
-    print("computation time = "+str(Ttime)+" seconds")
+    #Total time complexity in milliseconds
+    Ttime=(etime-stime)*1000
+    print("computation time = "+str(Ttime)+" milliseconds")
 
 #call main function
 A = list()

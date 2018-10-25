@@ -37,21 +37,21 @@ def partition(A,start,end):
 
 # main function
 def main():
-    for i in range(1000,2001,500):
+    #size of array from 0 to 2000 in steps of 100
+    for i in range(0,2001,100):
         A = [x for x in range(i)]
 
-        #CPU start time
+        #CPU start time in seconds
         stime=time.clock()
 
         quickSort(A,0,len(A)-1) 
 
-        #CPU end time
+        #CPU end time in seconds
         etime=time.clock()
-
         print("Time taken for array size = "+str(len(A)))
         #Total time complexity
         Ttime=etime-stime
-        print("computation time = "+str(Ttime)+" seconds")
+        print("computation time = "+str(Ttime)+" seconds ")
 
 #call main function
 
